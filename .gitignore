@@ -1,0 +1,22 @@
+# Hide text files
+*.txt
+txt
+
+# Hide notes and drafts
+notes.txt
+draft.txt
+TODO.txt
+
+# Hide personal files
+personal-notes.txt
+ideas.txt
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
