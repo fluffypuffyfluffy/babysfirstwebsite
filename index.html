@@ -50,17 +50,27 @@
       }
       .strawberry-bg.broider {
         position: relative;
-        padding: 2em; /* Adjust for more/less space between image and border */
-        background: url('images/STRAWBB-pink-90.png') no-repeat center center;
-        background-size: contain;
+        padding: 2em;
         border-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUCAYAAAAcaxDBAAAAAXNSR0IArs4c6QAAAo9JREFUeF7tnEtSBCEQRJ1zuPMwHtrDuPMcGu6casMXGZn0x0l3I1BQjyKpho6+PY2/59eXz5//+nh7v806yu9pb7Z17dP40/0Rnw0saqDA/K5boI3QP2OGAq4RKi45BJpektQhaZ6qqUf3N/25Fai26RKvAhWzmAINp4UIVNTkTXVVw6g/skflZD+t4RsNVQewekAEjMpVf9L2rKeg3xJ3dZdWJygNIG2vQMMPMjLQ9IzSEr1afwUazgIKtEC1JxuSFHVTJHsYoaqGUeLrZgHkULpc9b9AYQYKNByiBXo2oOqMpEU9zAPPHmYF0njiEz+xpw5XAyP77qZJ/hXomIFGKIUkJO7xJU8hLI73ctVd/2f7zRUIhfzliIXzTNqEC9Q8vmuEhg9DCjSsWQVaoGECYXON0NVAKQ14tDSKeFPeGn/0pAFdvbxAwzNYoEcDrabeE6CInLzid0rhgDjcXIGGp6BAzw700TRVjUhZQwtUe1MFN6UCLVBLRZcvebcDy7sTNFb9xyWvGjwBg+gQVP8LNHyJV6CrgaohHl1fFzBGfHoeKk5igYrAqHqBEiGxHIFSBbG/h6veW8/wlBdogYYJhM3FI/TRNbhAG6FhAmFzjdDVQN0T+TlD097Z3o1yNZ/a28/yBXp/RVKg5neb5gos0NVAXU0Na75tzpUk0kz5Xl41aBMIGyjQAg0TCJs7XYQeral7S47bH956Fug/exXHjRhVQdz+GqGD+O5AV0sAOUTle0eknIfSAPd2cO/+yP8CDS/xAl0N1E18XU11l7DaXq1P/m0itEC1PJN49Tv25vFdIzT80RbclFyNUTUnfedES9Ltj/jYJ/aUp612cO8JLNBBvBFKSwDyytl8NdAvl8IEwTYjudkAAAAASUVORK5CYII=") 28 / 28px / 0 round;
         border-width: 28px;
         border-style: solid;
+        background: none; /* Remove background here */
       }
-      .strawberry-bg > * {
+
+      .strawberry-bg.broider::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url('images/STRAWBB-pink-90.png') no-repeat center center;
+        background-size: contain;
+        opacity: 0.2; /* Only the strawberry is faded */
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .strawberry-bg.broider > * {
         position: relative;
         z-index: 1;
-        opacity: 1;
       }
       a {
         color: #175717;
