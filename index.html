@@ -49,13 +49,27 @@
         border-style: solid;
       }
       .background-wrapper {
-        background-image: url('images/STRAWBB-pink-90.png');
-        background-repeat: no-repeat; /* or 'no-repeat', 'repeat-x', 'repeat-y' */
-        background-size: contain;  /* or 'cover', or a specific size like '200px' */
-        background-position: center;
-        opacity: 0.3;
-        min-height: 100vh; /* ensures it fills the page */
-        border-radius: 0;  /* optional, if you want rounded corners inside the border */
+        position: relative;
+        min-height: 100vh;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .background-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url('images/STRAWBB-pink-90.png') no-repeat center center;
+        background-size: contain; /* or 'cover' */
+        opacity: 0.3; /* Only the strawberries are transparent! */
+        z-index: 0;
+        pointer-events: none;
+        transform: none; /* or rotate(90deg) if needed */
+      }
+
+      .background-wrapper > * {
+        position: relative;
+        z-index: 1;
       }
     </style>
 </head>
