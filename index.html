@@ -80,12 +80,31 @@
       a:hover, a:focus {
         color: #ea5601;
       }
+
+      .cute-header {
+        display: inline-block;
+        animation: wobble 2.5s infinite ease-in-out, colorfade 6s infinite alternate;
+      }
+
+      @keyframes wobble {
+        0%, 100% { transform: rotate(-2deg) scale(1); }
+        20% { transform: rotate(2deg) scale(1.04); }
+        40% { transform: rotate(-1deg) scale(1.02); }
+        60% { transform: rotate(1deg) scale(1.03); }
+        80% { transform: rotate(-2deg) scale(1); }
+      }
+
+      @keyframes colorfade {
+        0% { color: #0d2f0d; }
+        50% { color: #ea5601; }
+        100% { color: #3f3028; }
+      }
     </style>
 </head>
 <body>
   <div class="strawberry-bg broider">
     <header>
-      <h1>hi there, hal here!</h1>
+      <h1 class="cute-header">hi there, hal here!</h1>
     </header>
     <main>
       <section>
