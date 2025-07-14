@@ -100,6 +100,30 @@
         100% { color: #3f3028; }
       }
 
+      /* Glittery pink text effect */
+      .glitter-text {
+        font-family: 'DSETypewriter', 'Inconsolata', monospace;
+        font-size: 2.5em;
+        color: #ff69b4;
+        background: linear-gradient(90deg, #ff69b4 20%, #ffb6e6 40%, #ff69b4 60%, #fff0fa 80%);
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        animation: glitter-move 2.5s linear infinite;
+        position: relative;
+        letter-spacing: 0.04em;
+        text-shadow:
+          0 0 8px #fff0fa,
+          0 0 2px #ff69b4,
+          1px 1px 0 #ffb6e6;
+      }
+      @keyframes glitter-move {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
+      }
+
       /* Remove .wave-header and animation CSS */
       /* (All .wave-header, @keyframes wave, .wave-header .nowrap, and animation-delay rules can be deleted) */
     </style>
@@ -119,7 +143,7 @@
 <body>
   <div class="strawberry-bg broider">
     <header>
-      <img src="https://i.picasion.com/gl/92/ktnp.gif" width="518" height="57" border="0" alt="https://picasion.com/gl/ktnp/" />
+      <h1 class="glitter-text">hi there, hal here!</h1>
     </header>
     <main>
       <section>
