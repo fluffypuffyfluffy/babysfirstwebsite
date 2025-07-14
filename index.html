@@ -100,45 +100,8 @@
         100% { color: #3f3028; }
       }
 
-      .wave-header span {
-        display: inline-block;
-        animation: wave 3s infinite;
-        animation-timing-function: ease-in-out;
-        color: hwb(330 18% 4%);
-      }
-
-      @keyframes wave {
-        0%, 100% { transform: translateY(0); }
-        20% { transform: translateY(-8px); }
-        40% { transform: translateY(0); }
-        60% { transform: translateY(6px); }
-        80% { transform: translateY(0); }
-      }
-
-      .wave-header .nowrap {
-        white-space: nowrap;
-      }
-
-      /* Animation delays for first phrase (hi there,) */
-      .wave-header .nowrap:first-child span:nth-child(1) { animation-delay: 0s; }
-      .wave-header .nowrap:first-child span:nth-child(2) { animation-delay: 0.15s; }
-      .wave-header .nowrap:first-child span:nth-child(3) { animation-delay: 0.30s; }
-      .wave-header .nowrap:first-child span:nth-child(4) { animation-delay: 0.45s; }
-      .wave-header .nowrap:first-child span:nth-child(5) { animation-delay: 0.60s; }
-      .wave-header .nowrap:first-child span:nth-child(6) { animation-delay: 0.75s; }
-      .wave-header .nowrap:first-child span:nth-child(7) { animation-delay: 0.90s; }
-      .wave-header .nowrap:first-child span:nth-child(8) { animation-delay: 1.05s; }
-      .wave-header .nowrap:first-child span:nth-child(9) { animation-delay: 1.20s; }
-      /* Animation delays for second phrase (hal here!) */
-      .wave-header .nowrap:last-child span:nth-child(1) { animation-delay: 0s; }
-      .wave-header .nowrap:last-child span:nth-child(2) { animation-delay: 0.15s; }
-      .wave-header .nowrap:last-child span:nth-child(3) { animation-delay: 0.30s; }
-      .wave-header .nowrap:last-child span:nth-child(4) { animation-delay: 0.45s; }
-      .wave-header .nowrap:last-child span:nth-child(5) { animation-delay: 0.60s; }
-      .wave-header .nowrap:last-child span:nth-child(6) { animation-delay: 0.75s; }
-      .wave-header .nowrap:last-child span:nth-child(7) { animation-delay: 0.90s; }
-      .wave-header .nowrap:last-child span:nth-child(8) { animation-delay: 1.05s; }
-      .wave-header .nowrap:last-child span:nth-child(9) { animation-delay: 1.20s; }
+      /* Remove .wave-header and animation CSS */
+      /* (All .wave-header, @keyframes wave, .wave-header .nowrap, and animation-delay rules can be deleted) */
     </style>
     <!-- Open Graph / Facebook / Discord / Slack -->
     <meta property="og:title" content="hal's website">
@@ -156,15 +119,7 @@
 <body>
   <div class="strawberry-bg broider">
     <header>
-      <h1 class="wave-header">
-        <span class="nowrap">
-          <span>h</span><span>i</span><span>&nbsp;</span><span>t</span><span>h</span><span>e</span><span>r</span><span>e</span><span>,</span>
-        </span>
-        <span>&nbsp;</span><wbr>
-        <span class="nowrap">
-          <span>h</span><span>a</span><span>l</span><span>&nbsp;</span><span>h</span><span>e</span><span>r</span><span>e</span><span>!</span>
-        </span>
-      </h1>
+      <img src="https://i.picasion.com/gl/92/ktnp.gif" width="518" height="57" border="0" alt="https://picasion.com/gl/ktnp/" />
     </header>
     <main>
       <section>
