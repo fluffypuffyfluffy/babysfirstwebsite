@@ -1,6 +1,7 @@
 # Hide text files
 *.txt
 txt
+links txt
 
 # Hide notes and drafts
 notes.txt
@@ -17,6 +18,10 @@ fonts/
 *.otf
 *.woff
 *.woff2
+
+# Hide images
+images/STRAWBB-pink.png
+images/STRAWBB-pink-90.png
 
 # System files
 .DS_Store
