@@ -99,12 +99,49 @@
         50% { color: #ea5601; }
         100% { color: #3f3028; }
       }
+
+      .wave-header span {
+        display: inline-block;
+        animation: wave 1.5s infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes wave {
+        0%, 100% { transform: translateY(0); }
+        20% { transform: translateY(-10px); }
+        40% { transform: translateY(0); }
+        60% { transform: translateY(8px); }
+        80% { transform: translateY(0); }
+      }
+
+      .wave-header span:nth-child(1)  { animation-delay: 0s; }
+      .wave-header span:nth-child(2)  { animation-delay: 0.07s; }
+      .wave-header span:nth-child(3)  { animation-delay: 0.14s; }
+      .wave-header span:nth-child(4)  { animation-delay: 0.21s; }
+      .wave-header span:nth-child(5)  { animation-delay: 0.28s; }
+      .wave-header span:nth-child(6)  { animation-delay: 0.35s; }
+      .wave-header span:nth-child(7)  { animation-delay: 0.42s; }
+      .wave-header span:nth-child(8)  { animation-delay: 0.49s; }
+      .wave-header span:nth-child(9)  { animation-delay: 0.56s; }
+      .wave-header span:nth-child(10) { animation-delay: 0.63s; }
+      .wave-header span:nth-child(11) { animation-delay: 0.70s; }
+      .wave-header span:nth-child(12) { animation-delay: 0.77s; }
+      .wave-header span:nth-child(13) { animation-delay: 0.84s; }
+      .wave-header span:nth-child(14) { animation-delay: 0.91s; }
+      .wave-header span:nth-child(15) { animation-delay: 0.98s; }
+      .wave-header span:nth-child(16) { animation-delay: 1.05s; }
+      .wave-header span:nth-child(17) { animation-delay: 1.12s; }
+      .wave-header span:nth-child(18) { animation-delay: 1.19s; }
+      .wave-header span:nth-child(19) { animation-delay: 1.26s; }
     </style>
 </head>
 <body>
   <div class="strawberry-bg broider">
     <header>
-      <h1 class="cute-header">hi there, hal here!</h1>
+      <h1 class="wave-header">
+        <span>h</span><span>i</span><span> </span><span>t</span><span>h</span><span>e</span><span>r</span><span>e</span><span>,</span><span> </span>
+        <span>h</span><span>a</span><span>l</span><span> </span><span>h</span><span>e</span><span>r</span><span>e</span><span>!</span>
+      </h1>
     </header>
     <main>
       <section>
