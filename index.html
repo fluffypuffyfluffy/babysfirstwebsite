@@ -133,20 +133,35 @@
         cursor: pointer;
         display: inline-block;
       }
-      .hover-image .hover-img {
+      .hover-image .hover-img-container {
         display: none;
         position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 60vw;
-        max-width: 400px;
-        opacity: 0.3;
         z-index: 1000;
         pointer-events: none;
       }
-      .hover-image:hover .hover-img,
-      .hover-image:focus .hover-img {
+
+      .hover-image:hover .hover-img-container,
+      .hover-image:focus .hover-img-container {
+        display: block;
+      }
+
+      .hover-image .hover-img-backdrop {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255,255,255,0.85); /* Adjust opacity as needed */
+        border-radius: 16px;
+      }
+
+      .hover-image .hover-img {
+        position: relative;
+        width: 60vw;
+        max-width: 400px;
+        opacity: 0.6;
+        border-radius: 16px;
         display: block;
       }
  
@@ -181,7 +196,10 @@
         <a href="https://downtowncrenshaw.com/" target="_blank" rel="noopener">Downtown Crenshaw</a>,
         <a href="https://challengeinequality.luskin.ucla.edu/" target="_blank" rel="noopener">UCLA Luskin Institute on Inequality and Democracy</a>,
         and <a href="https://swanvancouver.ca/" target="_blank" rel="noopener">SWAN Vancouver</a>. I'm currently working on a movement research guide (coming soon!) and will be leading a workshop on movement research at <a href https://deepmay.net/ target="blank rel="noopener">DeepMay</a> in August.</p>
-        <p>My artistic practice is always stretching and folding. Sometimes I make things with words, sometimes with flour, sometimes with code or sound or strangers in a park. Each offering is an invitation: to play, gather, and imagine new ways of being together. From 2017-2019, I co-led a social practice and creative placemaking collective alongside El Arkin and Renée Miles Rooijmans, called frida&frank. We designed and fabricated our own ping-pong tables and played games with strangers across greater Vancouver as an invitation to reimagine the commons. More recently, I've been a part of an alternative education project based in Los Angeles, called <a href="https://fractal.school" target="_blank" rel="noopener">F.R.A.C.T.A.L.</a>. I'm also a culinary artist, with a sweet spot for cakes. My favourite cakes I've made are ones that act as an ephemeral archive. Sometimes my cakes are also sculptures, sometimes they're digital. Sometimes I make <span class="hover-image">wedding cakes<img src="images/linked-images/cake_wedding.jpg" alt="A wedding cake decorated with flowers" class="hover-img" /></span> and desserts for events, like pop-ups and book releases. Sometimes the cakes are grief rituals and poems. Some times I write about them! <a href=https://docs.google.com/document/d/1vhmOIQ8QmRCEc5xUOSooRCQxs6Y0kGxeW3JSx-jEIeA/edit?usp=sharingtarget="_blank" rel="noopener">Check out my guide to baking cakes here</a>. I also do food styling. I make food other than cakes too! More than anything, I love to play :). My culinary project, as well as my <a href="https://soundcloud.com/lovening-agent" target="_blank" rel="noopener">DJing</a> are nestled under the moniker 'Lovening Agent'.</p> 
+        <p>My artistic practice is always stretching and folding. Sometimes I make things with words, sometimes with flour, sometimes with code or sound or strangers in a park. Each offering is an invitation: to play, gather, and imagine new ways of being together. From 2017-2019, I co-led a social practice and creative placemaking collective alongside El Arkin and Renée Miles Rooijmans, called frida&frank. We designed and fabricated our own ping-pong tables and played games with strangers across greater Vancouver as an invitation to reimagine the commons. More recently, I've been a part of an alternative education project based in Los Angeles, called <a href="https://fractal.school" target="_blank" rel="noopener">F.R.A.C.T.A.L.</a>. I'm also a culinary artist, with a sweet spot for cakes. My favourite cakes I've made are ones that act as an ephemeral archive. Sometimes my cakes are also sculptures, sometimes they're digital. Sometimes I make <span class="hover-image">wedding cakes<span class="hover-img-container" aria-hidden="true">
+  <span class="hover-img-backdrop"></span>
+  <img src="images/linked-images/cake_wedding.jpg" alt="" class="hover-img" />
+</span></span> and desserts for events, like pop-ups and book releases. Sometimes the cakes are grief rituals and poems. Some times I write about them! <a href=https://docs.google.com/document/d/1vhmOIQ8QmRCEc5xUOSooRCQxs6Y0kGxeW3JSx-jEIeA/edit?usp=sharingtarget="_blank" rel="noopener">Check out my guide to baking cakes here</a>. I also do food styling. I make food other than cakes too! More than anything, I love to play :). My culinary project, as well as my <a href="https://soundcloud.com/lovening-agent" target="_blank" rel="noopener">DJing</a> are nestled under the moniker 'Lovening Agent'.</p> 
         <p>Lately, my creative practice has been merging with my collaborator and partner, <a href="https://hyperwhisper.net/" target="_blank" rel="noopener">Whisper</a>, building  software, hardware, and wetware (ritual) for collective home-making. <a href="https://resonant.love/" target="_blank" rel="noopener">Check out our website here!</a> We're about to head off on a whorld tour at the end of July and will be frolicking across North America and Europe. We love to meet people and also <a href=https://spines.resonant.love target="_blank" rel="noopener">read together</a> — Come join us for <a href="https://resonant.love/office-hours.html" target="_blank" rel="noopener">office hours</a>, or send us an email to connect!</p>
         <img src="https://i.picasion.com/gl/92/ktAR.gif" class="xoxo-gif" alt="xoxo">
         <p></p>  
