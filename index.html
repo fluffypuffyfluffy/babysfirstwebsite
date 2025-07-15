@@ -61,11 +61,17 @@
         content: "";
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: url('images/STRAWBB-pink.png') no-repeat center center;
+        background: url('images/strawbb-pink.png') no-repeat center center;
         background-size: contain;
         opacity: 0.2; /* Only the strawberry is faded */
         z-index: 0;
         pointer-events: none;
+      }
+
+      @media (orientation: portrait) {
+        .strawberry-bg.broider::before {
+          background-image: url('images/strawbb-pink-portrait.png');
+        }
       }
 
       .strawberry-bg.broider > * {
