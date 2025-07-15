@@ -132,13 +132,15 @@
         position: relative;
         cursor: pointer;
         display: inline-block;
+        background-repeat: repeat-x;
+        background-position: 0 100%;
+        background-size: 16px 6px;
+        background-image: url('data:image/svg+xml;utf8,<svg width="16" height="6" viewBox="0 0 16 6" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,6 4,0 8,6 12,0 16,6" stroke="%23ff69b4" stroke-width="2" fill="none"/></svg>');
+        padding-bottom: 4px;
       }
       .hover-image .hover-img-container {
         display: none;
         position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         z-index: 1000;
         pointer-events: none;
       }
@@ -153,7 +155,7 @@
         width: 100%;
         height: 100%;
         background: rgba(255,255,255,0.85); /* Adjust opacity as needed */
-        border-radius: 16px;
+        /* No border radius */
       }
 
       .hover-image .hover-img {
@@ -161,11 +163,22 @@
         width: 60vw;
         max-width: 400px;
         opacity: 0.6;
-        border-radius: 16px;
         display: block;
       }
+
+      /* Randomize hover image position, avoid covering hovered word */
+      .hover-image .hover-img-container {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        pointer-events: none;
+      }
+      .hover-image:hover .hover-img-container,
+      .hover-image:focus .hover-img-container {
+        display: block;
+      }
+      /* JS will set left/top dynamically */
  
-   
     </style>
     <!-- Open Graph / Facebook / Discord / Slack -->
     <meta property="og:title" content="hal's website">
@@ -182,9 +195,9 @@
 </head>
 <body>
   <div class="strawberry-bg broider">
-    <header>
+<header>
       <img src="https://i.picasion.com/gl/92/ktnp.gif" class="header-gif" alt="hi there, hal here!">
-    </header>
+</header>
     <main>
       <section>
         <p>
@@ -200,7 +213,7 @@
   <span class="hover-img-backdrop"></span>
   <img src="images/linked-images/cake_wedding.jpg" alt="" class="hover-img" />
 </span></span> and desserts for events, like pop-ups and book releases. Sometimes the cakes are grief rituals and poems. Some times I write about them! 
-<span class="hover-image">grief ritual
+<span class="hover-image">grief rituals
   <span class="hover-img-container" aria-hidden="true">
     <span class="hover-img-backdrop"></span>
     <img src="images/linked-images/cake_grief.jpg" alt="" class="hover-img" />
@@ -220,6 +233,63 @@
     </main>
   </div>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <script>
+    // Randomize hover image position, avoid covering hovered word
+    document.querySelectorAll('.hover-image').forEach(function(span) {
+      span.addEventListener('mouseenter', function(e) {
+        var container = span.querySelector('.hover-img-container');
+        if (!container) return;
+        var img = container.querySelector('.hover-img');
+        if (!img) return;
+        // Get viewport size
+        var vw = window.innerWidth;
+        var vh = window.innerHeight;
+        // Get bounding rect of the hovered word
+        var rect = span.getBoundingClientRect();
+        // Image size
+        var imgW = img.naturalWidth || 300;
+        var imgH = img.naturalHeight || 200;
+        var scale = Math.min(1, vw * 0.6 / imgW, 400 / imgW);
+        imgW = imgW * scale;
+        imgH = imgH * scale;
+        // Try up to 10 random positions
+        var found = false;
+        for (var i = 0; i < 10; i++) {
+          var left = Math.random() * (vw - imgW);
+          var top = Math.random() * (vh - imgH);
+          // Avoid covering the hovered word (with margin)
+          var margin = 40;
+          if (
+            left + imgW < rect.left - margin ||
+            left > rect.right + margin ||
+            top + imgH < rect.top - margin ||
+            top > rect.bottom + margin
+          ) {
+            container.style.left = left + 'px';
+            container.style.top = top + 'px';
+            container.style.transform = 'none';
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          // fallback: center
+          container.style.left = '50%';
+          container.style.top = '50%';
+          container.style.transform = 'translate(-50%, -50%)';
+        }
+      });
+      // Reset on mouseleave
+      span.addEventListener('mouseleave', function() {
+        var container = span.querySelector('.hover-img-container');
+        if (container) {
+          container.style.left = '';
+          container.style.top = '';
+          container.style.transform = '';
+        }
+      });
+    });
+    </script>
 </body>
 </html>
 
