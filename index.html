@@ -64,7 +64,7 @@
         background: url('images/STRAWBB-pink.png') no-repeat center center;
         background-size: contain;
         opacity: 0.2; /* Only the strawberry is faded */
-        z-index: 0;
+        z-index: 100; /* Strawberry behind images */
         pointer-events: none;
       }
 
@@ -76,7 +76,7 @@
 
       .strawberry-bg.broider > * {
         position: relative;
-        z-index: 1;
+        z-index: 9999; /* Bio text and headers on frontmost layer */
       }
       a {
         color: #175717;
@@ -132,34 +132,24 @@
         position: relative;
         cursor: pointer;
         display: inline-block;
-        border-bottom: 1px dotted #623b4e;
-        padding-bottom: 1.5px;
-      }
-      .hover-image .hover-img-container {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        pointer-events: none;
+        text-decoration: underline dotted #000000;
       }
 
-      .hover-image:hover .hover-img-container,
-      .hover-image:focus .hover-img-container {
-        display: block;
-      }
 
       .hover-image .hover-img-backdrop {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: rgba(255,255,255,0.85); /* Adjust opacity as needed */
-        /* No border radius */
+        background: rgba(255,255,255,0.7);
+        /* Match the image size exactly */
+        max-width: 500px;
       }
 
       .hover-image .hover-img {
         position: relative;
-        width: 60vw;
-        max-width: 400px;
-        opacity: 0.6;
+        width: 100%;
+        max-width: 500px;
+        opacity: 0.5;
         display: block;
       }
 
@@ -167,7 +157,7 @@
       .hover-image .hover-img-container {
         display: none;
         position: fixed;
-        z-index: 1000;
+        z-index: 500; /* Images behind the text */
         pointer-events: none;
       }
       .hover-image:hover .hover-img-container,
@@ -176,9 +166,6 @@
       }
       /* JS will set left/top dynamically */
  
-    * {
-      cursor: url(https://cur.cursors-4u.net/symbols/sym-2/sym119.cur), auto !important;
-    }
  
     </style>
     <!-- Open Graph / Facebook / Discord / Slack -->
@@ -202,65 +189,20 @@
     <main>
       <section>
         <p>
-        I'm an artist and researcher, based in Los Angeles. As a researcher, I work with/in social movement spaces to further projects of collective liberation. Most recently, I worked as Research Director for <a href="https://whereismyland.org/" target="_blank" rel="noopener">Where Is My Land</a>, an organization that seeks restitution for Black families who have experienced land dispossession within their lineage. Previously, I have supported groups such as the
-        <a href="https://solidarityresearch.org/project/municipalism-a-critical-review/" target="_blank" rel="noopener">Solidarity Research Center</a>,
-        <a href="https://www.codepink.org/" target="_blank" rel="noopener">CodePink</a>,
-        <a href="https://garmentworkercenter.org/" target="_blank" rel="noopener">Garment Workers Center</a>,
-        <a href="https://youthjusticela.org/" target="_blank" rel="noopener">Youth Justice Coalition</a>,
-        <a href="https://downtowncrenshaw.com/" target="_blank" rel="noopener">Downtown Crenshaw</a>,
-        <a href="https://challengeinequality.luskin.ucla.edu/" target="_blank" rel="noopener">UCLA Luskin Institute on Inequality and Democracy</a>,
-        and <a href="https://swanvancouver.ca/" target="_blank" rel="noopener">SWAN Vancouver</a>. I'm currently working on a movement research guide (coming soon!) and will be leading a workshop on movement research at <a href https://deepmay.net/ target="blank rel="noopener">DeepMay</a> in August.</p>
-        <p>My artistic practice is always stretching and folding. Sometimes I make things with words, sometimes with flour, sometimes with code or sound or strangers in a park. Each offering is an invitation: to play, gather, and imagine new ways of being together. From 2017-2019, I co-led a social practice and creative placemaking collective alongside El Arkin and Renée Miles Rooijmans, called frida&frank. We designed and fabricated our own ping-pong tables and played games with strangers across greater Vancouver as an invitation to reimagine the commons. More recently, I've been a part of an alternative education project based in Los Angeles, called <a href="https://fractal.school" target="_blank" rel="noopener">F.R.A.C.T.A.L.</a>. I'm also a culinary artist, with a sweet spot for cakes. My <span class="hover-image">favourite
-          <span class="hover-img-container" aria-hidden="true">
-            <span class="hover-img-backdrop"></span>
-            <img src="images/linked-images/cake_favourite.jpg" alt="" class="hover-img" />
-          </span> cakes I've made are ones that act as an ephemeral archive. Sometimes my cakes are also </span> <span class="hover-image">sculptures
-            <span class="hover-img-container" aria-hidden="true">
-              <span class="hover-img-backdrop"></span>
-              <img src="images/linked-images/cake_sculpture.jpg" alt="" class="hover-img" />
-            </span>, sometimes they're digital. Sometimes I make <span class="hover-image">wedding cakes
-  <span class="hover-img-container" aria-hidden="true">
-    <span class="hover-img-backdrop"></span>
-    <img src="images/linked-images/cake_wedding.jpg" alt="" class="hover-img" />
-  </span>
-</span> and desserts for events, like <span class="hover-image">pop-ups
-  <span class="hover-img-container" aria-hidden="true">
-    <span class="hover-img-backdrop"></span>
-    <img src="images/linked-images/cake_pop-ups.jpeg" alt="" class="hover-img" />
-  </span>
-</span> and <span class="hover-image">book releases
-  <span class="hover-img-container" aria-hidden="true">
-    <span class="hover-img-backdrop"></span>
-    <img src="images/linked-images/night-gallery-catering.jpg" alt="" class="hover-img" />
-  </span>
-</span>. Sometimes the cakes are <span class="hover-image">grief rituals
-  <span class="hover-img-container" aria-hidden="true">
-    <span class="hover-img-backdrop"></span>
-    <img src="images/linked-images/cake_grief.JPG" alt="" class="hover-img" />
-  </span>
-</span> and poems. Some times I write about them! Check out my guide to baking cakes <a href=https://docs.google.com/document/d/1vhmOIQ8QmRCEc5xUOSooRCQxs6Y0kGxeW3JSx-jEIeA/edit?usp=sharingtarget="_blank" rel="noopener">here</a>. I also do <span class="hover-image">food styling
-  <span class="hover-img-container" aria-hidden="true">
-    <span class="hover-img-backdrop"></span>
-    <img src="images/linked-images/food_styling.JPG" alt="" class="hover-img" />
-  </span>. Sometimes I make <span class="hover-image">food other than cakes
-  <span class="hover-img-container" aria-hidden="true">
-    <span class="hover-img-backdrop"></span>
-    <img src="images/linked-images/canary_menu.JPG" alt="" class="hover-img" />
-  </span>
-</span> too! More than anything, I love to <span class="hover-image">play
-  <span class="hover-img-container" aria-hidden="true">
-    <span class="hover-img-backdrop"></span>
-    <video src="images/linked-images/play.MOV" class="hover-img" muted loop playsinline></video>
-  </span> :)
-</span>. My culinary project, as well as my <a href="https://soundcloud.com/lovening-agent" target="_blank" rel="noopener">DJing</a> are nestled under the moniker 'Lovening Agent'.
-<a href=https://docs.google.com/document/d/1vhmOIQ8QmRCEc5xUOSooRCQxs6Y0kGxeW3JSx-jEIeA/edit?usp=sharingtarget="_blank" rel="noopener">Check out my guide to baking cakes here</a>. I also do food styling. I make food other than cakes too! More than anything, I love to play :). My culinary project, as well as my <a href="https://soundcloud.com/lovening-agent" target="_blank" rel="noopener">DJing</a> are nestled under the moniker 'Lovening Agent'.</p> 
-        <p>Lately, my creative practice has been merging with my collaborator and partner, <a href="https://hyperwhisper.net/" target="_blank" rel="noopener">Whisper</a>, building  software, hardware, and wetware (ritual) for collective home-making. <a href="https://resonant.love/" target="_blank" rel="noopener">Check out our website here!</a> We're about to head off on a whorld tour at the end of July and will be frolicking across North America and Europe. We love to meet people and also <a href=https://spines.resonant.love target="_blank" rel="noopener">read together</a> — Come join us for <a href="https://resonant.love/office-hours.html" target="_blank" rel="noopener">office hours</a>, or send us an email to connect!</p>
+        I'm an artist and researcher, based in Los Angeles. As a researcher, I work with/in social movement spaces to further projects of collective liberation. Most recently, I worked as Research Director for <a href="https://whereismyland.org/" target="_blank" rel="noopener">Where Is My Land</a>, an organization that seeks restitution for Black families who have experienced land dispossession within their lineage. Previously, I have supported groups such as the <a href="https://solidarityresearch.org/project/municipalism-a-critical-review/" target="_blank" rel="noopener">Solidarity Research Center</a>, <a href="https://www.codepink.org/" target="_blank" rel="noopener">CodePink</a>, the <a href="https://garmentworkercenter.org/" target="_blank" rel="noopener">Garment Workers Center</a>, <a href="https://youthjusticela.org/" target="_blank" rel="noopener">Youth Justice Coalition</a>, <a href="https://downtowncrenshaw.com/" target="_blank" rel="noopener">Downtown Crenshaw</a>, The <a href="https://challengeinequality.luskin.ucla.edu/" target="_blank" rel="noopener">UCLA Luskin Institute on Inequality and Democracy</a>, and <a href="https://swanvancouver.ca/" target="_blank" rel="noopener">SWAN Vancouver</a>. I'm currently working on a movement research guide (coming soon!) and will be leading a workshop on movement research at <a href="https://deepmay.net/" target="_blank" rel="noopener">DeepMay</a> in August.
+        </p>
+        <p>
+        My artistic practice is always stretching and folding. Sometimes I make things with words, sometimes with flour, sometimes with code or sound or strangers in a park. Each offering is an invitation: to play, gather, and imagine new ways of being together. From 2017-2019, I co-led a social practice and creative placemaking collective alongside El Arkin and Renee Miles Rooijmans, called frida&frank. We designed and fabricated our own ping-pong tables and played hundreds of games with strangers across greater Vancouver as an invitation to reimagine. More recently, I've been a part of an alternative education project based in Los Angeles, called <a href="https://fractal.school/" target="_blank" rel="noopener">F.R.A.C.T.A.L.</a>. I'm also a culinary artist, with a sweet spot for cakes. My <span class="hover-image">favourite<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_favourite.jpg" alt="" class="hover-img" /></span></span> cakes I've made are ones that act as an ephemeral archive. Sometimes my cakes are more <span class="hover-image">sculptural<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_sculpture.jpg" alt="" class="hover-img" /></span></span>, sometimes they're digital. Sometimes I make wedding cakes and desserts for events, like <span class="hover-image">pop-ups<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_pop-ups.jpeg" alt="" class="hover-img" /></span></span> and <span class="hover-image">book releases<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/night-gallery-catering.jpg" alt="" class="hover-img" /></span></span>. Sometimes the cakes are <span class="hover-image">grief rituals<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_grief.JPG" alt="" class="hover-img" /></span></span> and poems. Some times I write about them! <a href="#">Check out my guide to baking cakes here.</a> I also do <span class="hover-image">food styling<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/food_styling.JPG" alt="" class="hover-img" /></span></span>. I make <span class="hover-image">food other than cakes<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/canary_menu.JPG" alt="" class="hover-img" /></span></span> too! More than anything, I <span class="hover-image">love to play :)<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><video src="images/linked-images/play.mp4" class="hover-img" loop playsinline></video></span></span>. My culinary project, as well as my DJing are nestled under the moniker 'Lovening Agent'.
+        </p>
+        <p>
+        Lately, my creative practice has been merging with my collaborator and partner, Whisper, building  software, hardware, and wetware (ritual) for collective home-making. <a href="#">Check out our website here!</a> We're about to head off on a whorld tour at the end of July and will be frolicking across North America and Europe. We love to meet people and also <a href="#">read together</a> — Come join us for <a href="#">office hours</a>, or send us an email to connect!
+        </p>
         <img src="https://i.picasion.com/gl/92/ktAR.gif" class="xoxo-gif" alt="xoxo">
         <p></p>  
         <p>find me on: 
           <a href="https://www.instagram.com/lovening.agent/">Instagram</a> ♡
-          <a href="https://soundcloud.com/lovening-agent">soundcloud</a> ♡
-          <a href="https://www.are.na/halllllllllllllllllllllllllllllllllllll-3/channels">are.na</a> ♡
+          <a href="https://soundcloud.com/lovening-agent">SoundCloud</a> ♡
+          <a href="https://www.are.na/halllllllllllllllllllllllllllllllllllll-3/channels">Are.na</a> ♡
           <a href="https://github.com/fluffypuffyfluffy">GitHub</a>
         </p>
       </section>
@@ -280,38 +222,11 @@
         var vh = window.innerHeight;
         // Get bounding rect of the hovered word
         var rect = span.getBoundingClientRect();
-        // Image size
-        var imgW = img.naturalWidth || 300;
-        var imgH = img.naturalHeight || 200;
-        var scale = Math.min(1, vw * 0.6 / imgW, 400 / imgW);
-        imgW = imgW * scale;
-        imgH = imgH * scale;
-        // Try up to 10 random positions
-        var found = false;
-        for (var i = 0; i < 10; i++) {
-          var left = Math.random() * (vw - imgW);
-          var top = Math.random() * (vh - imgH);
-          // Avoid covering the hovered word (with margin)
-          var margin = 40;
-          if (
-            left + imgW < rect.left - margin ||
-            left > rect.right + margin ||
-            top + imgH < rect.top - margin ||
-            top > rect.bottom + margin
-          ) {
-            container.style.left = left + 'px';
-            container.style.top = top + 'px';
-            container.style.transform = 'none';
-            found = true;
-            break;
-          }
-        }
-        if (!found) {
-          // fallback: center
-          container.style.left = '50%';
-          container.style.top = '50%';
-          container.style.transform = 'translate(-50%, -50%)';
-        }
+        // Simple random positioning - keep it simple like the original
+        var left = Math.random() * Math.max(0, window.innerWidth - 700);
+        var top = Math.random() * Math.max(0, window.innerHeight - 400);
+        container.style.left = left + 'px';
+        container.style.top = top + 'px';
       });
       // Reset on mouseleave
       span.addEventListener('mouseleave', function() {
