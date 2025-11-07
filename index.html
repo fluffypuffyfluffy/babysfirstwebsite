@@ -137,7 +137,8 @@
         position: relative;
         cursor: pointer;
         display: inline-block;
-        text-decoration: underline dotted #ca78e8;
+        color: hsl(21, 96%, 46%); /* hot pink */
+        
       }
 
 
@@ -192,58 +193,77 @@
       <img src="https://i.picasion.com/gl/92/ktnp.gif" class="header-gif" alt="hi there, hal here!">
 </header>
     <main>
-      <section>
-        <p>
-        I'm an artist and researcher, based in Los Angeles. As a researcher, I work with/in social movement spaces to further projects of collective liberation. Most recently, I worked as Research Director for <a href="https://whereismyland.org/" target="_blank" rel="noopener">Where Is My Land</a>, an organization that seeks restitution for Black families who have experienced land dispossession within their lineage. Previously, I have supported groups such as the <a href="https://solidarityresearch.org/project/municipalism-a-critical-review/" target="_blank" rel="noopener">Solidarity Research Center</a>, <a href="https://www.codepink.org/" target="_blank" rel="noopener">CodePink</a>, the <a href="https://garmentworkercenter.org/" target="_blank" rel="noopener">Garment Workers Center</a>, <a href="https://youthjusticela.org/" target="_blank" rel="noopener">Youth Justice Coalition</a>, <a href="https://downtowncrenshaw.com/" target="_blank" rel="noopener">Downtown Crenshaw</a>, The <a href="https://challengeinequality.luskin.ucla.edu/" target="_blank" rel="noopener">UCLA Luskin Institute on Inequality and Democracy</a>, and <a href="https://swanvancouver.ca/" target="_blank" rel="noopener">SWAN Vancouver</a>. I'm currently working on a movement research guide (coming soon!) and will be leading a workshop on movement research at <a href="https://deepmay.net/" target="_blank" rel="noopener">DeepMay</a> in August.
-        </p>
-        <p>
-        My artistic practice is always stretching and folding. Sometimes I make things with words, sometimes with flour, sometimes with code or sound or strangers in a park. Each offering is an invitation: to play, gather, and imagine new ways of being together. From 2017-2019, I co-led a social practice and creative placemaking collective alongside El Arkin and Renee Miles Rooijmans, called frida&frank. We designed and fabricated our own ping-pong tables and played hundreds of games with strangers across greater Vancouver as an invitation to reimagine public spaces. More recently, I've been a part of an alternative education project based in Los Angeles, called <a href="https://fractal.school/" target="_blank" rel="noopener">F.R.A.C.T.A.L.</a>. I'm also a culinary artist, with a sweet spot for cakes. My <span class="hover-image">favourite<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_favourite.jpg" alt="" class="hover-img" /></span></span> cakes I've made are ones that act as an ephemeral archive. Sometimes my cakes are more <span class="hover-image">sculptural<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_sculpture.jpg" alt="" class="hover-img" /></span></span>, sometimes they're digital. Sometimes I make wedding cakes and desserts for events, like <span class="hover-image">pop-ups<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_pop-ups.jpeg" alt="" class="hover-img" /></span></span> and <span class="hover-image">book releases<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/night-gallery-catering.jpg" alt="" class="hover-img" /></span></span>. Sometimes the cakes are <span class="hover-image">grief rituals<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/cake_grief.JPG" alt="" class="hover-img" /></span></span> and poems. Some times I write about them! <a href="#">Check out my guide to baking cakes here.</a> I also do <span class="hover-image">food styling<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/food_styling.JPG" alt="" class="hover-img" /></span></span>. I make <span class="hover-image">food other than cakes<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><img src="images/linked-images/canary_menu.JPG" alt="" class="hover-img" /></span></span> too! More than anything, I <span class="hover-image">love to play :)<span class="hover-img-container" aria-hidden="true"><span class="hover-img-backdrop"></span><video src="images/linked-images/play.mp4" class="hover-img" loop playsinline></video></span></span>. My culinary project, as well as my DJing are nestled under the moniker 'Lovening Agent'.
-        </p>
-        <p>
-        Lately, my creative practice has been merging with my collaborator and partner, <a href="https://hyperwhisper.net/" target="_blank" rel="noopener">Whisper</a>, building  software, hardware, and wetware (ritual) for collective home-making. <a href="https://resonant.love">Check out our website here!</a> We're about to head off on a whorld tour at the end of July and will be frolicking across North America and Europe. We love to meet people and also <a href="https:spines.resonant.love">read together</a> — Come join us for <a href="https://resonant.love/office-hours.html">office hours</a>, or send us an email at <b>hwwh at resonant dot love</b> to connect!
-        </p>
-        <img src="https://i.picasion.com/gl/92/ktAR.gif" class="xoxo-gif" alt="xoxo">
-        <p></p>  
-        <p>find me on: 
-          <a href="https://www.instagram.com/lovening.agent/">Instagram</a> ♡
-          <a href="https://soundcloud.com/lovening-agent">SoundCloud</a> ♡
-          <a href="https://www.are.na/halllllllllllllllllllllllllllllllllllll-3/channels">Are.na</a> ♡
-          <a href="https://github.com/fluffypuffyfluffy">GitHub</a>
-        </p>
+      <section id="bio-content">
+        <!-- Bio content will be loaded from bio.md -->
       </section>
     </main>
   </div>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+  
   <script>
-    // Randomize hover image position, avoid covering hovered word
-    document.querySelectorAll('.hover-image').forEach(function(span) {
-      span.addEventListener('mouseenter', function(e) {
-        var container = span.querySelector('.hover-img-container');
-        if (!container) return;
-        var img = container.querySelector('.hover-img');
-        if (!img) return;
-        // Get viewport size
-        var vw = window.innerWidth;
-        var vh = window.innerHeight;
-        // Get bounding rect of the hovered word
-        var rect = span.getBoundingClientRect();
-        // Simple random positioning - keep it simple like the original
-        var left = Math.random() * Math.max(0, window.innerWidth - 700);
-        var top = Math.random() * Math.max(0, window.innerHeight - 400);
-        container.style.left = left + 'px';
-        container.style.top = top + 'px';
+    // Load and render bio.md
+    async function loadBio() {
+      try {
+        const response = await fetch('bio.md');
+        const markdown = await response.text();
+        
+        // Configure marked to open external links in new tabs
+        marked.use({
+          renderer: {
+            link(href, title, text) {
+              const isExternal = href.startsWith('http://') || href.startsWith('https://');
+              const target = isExternal ? ' target="_blank" rel="noopener"' : '';
+              const titleAttr = title ? ` title="${title}"` : '';
+              return `<a href="${href}"${titleAttr}${target}>${text}</a>`;
+            }
+          }
+        });
+        
+        // Convert markdown to HTML and wrap paragraphs
+        const html = marked.parse(markdown);
+        document.getElementById('bio-content').innerHTML = html;
+        
+        // Initialize hover image functionality after content is loaded
+        initHoverImages();
+      } catch (error) {
+        console.error('Error loading bio:', error);
+        document.getElementById('bio-content').innerHTML = '<p>Error loading bio content.</p>';
+      }
+    }
+    
+    // Initialize hover image effects
+    function initHoverImages() {
+      document.querySelectorAll('.hover-image').forEach(function(span) {
+        span.addEventListener('mouseenter', function(e) {
+          var container = span.querySelector('.hover-img-container');
+          if (!container) return;
+          var img = container.querySelector('.hover-img');
+          if (!img) return;
+          
+          // Simple random positioning
+          var left = Math.random() * Math.max(0, window.innerWidth - 700);
+          var top = Math.random() * Math.max(0, window.innerHeight - 400);
+          container.style.left = left + 'px';
+          container.style.top = top + 'px';
+        });
+        
+        span.addEventListener('mouseleave', function() {
+          var container = span.querySelector('.hover-img-container');
+          if (container) {
+            container.style.left = '';
+            container.style.top = '';
+            container.style.transform = '';
+          }
+        });
       });
-      // Reset on mouseleave
-      span.addEventListener('mouseleave', function() {
-        var container = span.querySelector('.hover-img-container');
-        if (container) {
-          container.style.left = '';
-          container.style.top = '';
-          container.style.transform = '';
-        }
-      });
-    });
-    </script>
+    }
+    
+    // Load bio when page loads
+    document.addEventListener('DOMContentLoaded', loadBio);
+  </script>
 </body>
 </html>
 
